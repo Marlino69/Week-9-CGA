@@ -42,12 +42,10 @@ public class FPSDisplay : MonoBehaviour
     }
 
     void Display(Text label, int fps) {
-        Debug.Log("Updating FPS: " + fps);
         label.text = stringsFrom00To99[Mathf.Clamp(fps, 0, 99)];
         for (int i = 0; i < coloring.Length; i++) {
             if (fps >= coloring[i].minimumFPS) {
             label.color = coloring[i].color;
-            Debug.Log("Changing color to: " + coloring[i].color);
             break;
             }
         }
